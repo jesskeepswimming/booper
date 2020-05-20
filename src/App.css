@@ -28,9 +28,16 @@
   color: #61dafb;
 }
 
+.Bpm {
+  padding: 0px 0px 0px 0px;
+}
 
 .boops {
   padding: 50px 50px 50px 50px;
+}
+
+.Slider {
+    width: 200;
 }
 
 @keyframes App-logo-spin {

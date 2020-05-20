@@ -1,4 +1,4 @@
-const metroReducer = (state = {metroOn: false, speed: 50}, action) => {
+const metroReducer = (state = [{metroOn: false, speed: 50}], action) => {
     switch (action.type) {
         case 'ADJUST': 
             return  { ...state, metroOn: !state.metroOn };
