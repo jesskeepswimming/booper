@@ -8,6 +8,7 @@ import useSound from "use-sound";
 
 import sound1 from './sounds/soundsample.mp3';
 import sound2 from './sounds/soundsample2.mp3';
+import boomkick from './sounds/boomkick.mp3';
 import metro from './sounds/metronome.mp3';
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -62,7 +63,9 @@ const Boop = props => {
   let num = parseInt(props.name);
 
   useEffect(()=> {
+    console.log("effect");
     player[num] ? play() : pause(); 
+    //player[num] ? console.log('play ' + num) : console.log('pause ' +num); 
     return;
   })
 
@@ -86,14 +89,16 @@ function App() {
 
       </header>
 
-      <body>
 
       <div className="boops">
+        
         <Boop name = '0' src = {sound1}/> 
         <h1></h1>
         <Boop name = '1' src = {sound2}/>
+        <h1></h1>
+        <Boop name = '2' src = {boomkick}/>
+
       </div>
-      </body>
     </div>
   );
 }
