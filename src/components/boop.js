@@ -36,7 +36,6 @@ const Boop = props => {
 
     */
 
-  
     useEffect(()=> {
       console.log("effect");
 
@@ -50,6 +49,7 @@ const Boop = props => {
         <div>
             <button onClick={()=>dispatch(songmanager(num, sound, change))}>Record!</button>
             <button onClick={()=>dispatch(toggle(num))}>Boop!</button>
+            {songer[num] ? <t></t>: <t> no sound recorded</t>}
         </div>
        
     )
