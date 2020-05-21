@@ -1,7 +1,6 @@
-import playReducer from './play';
-import metroReducer from './metroredec';
-import songReducer from './songs';
-
+import playReducer from './playReducer';
+import metroReducer from './metroReducer';
+import songReducer from './songReducer';
 
 import {combineReducers} from 'redux';
 

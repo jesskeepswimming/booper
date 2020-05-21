@@ -4,12 +4,12 @@ import {adjust, speed} from '../actions/bpm';
 import useSound from "use-sound";
 
 import Slider from "@material-ui/core/Slider";
-
 import metro from '../sounds/metronome.mp3';
 
-const Metronome = props => {
+const Metronome = () => {
   const dispatch = useDispatch();  
   const met = useSelector(state => state.metroReducer); 
+  
   const [value, setValue] = useState(50);
 
   const [playbackRate, setPlaybackRate] = useState(value/20);
