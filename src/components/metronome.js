@@ -16,11 +16,9 @@ const Metronome = props => {
   const [play, {stop}] = useSound(metro, {playbackRate, interrupt:true});
 
   const handleChange = (event, newValue) => {
-
     setValue(newValue);
     setPlaybackRate(newValue/20)
     dispatch(speed(newValue/20))
-
   };
 
   useEffect(()=> {

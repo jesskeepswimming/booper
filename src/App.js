@@ -4,6 +4,7 @@ import './App.css';
 import sound1 from './sounds/soundsample.mp3';
 import sound2 from './sounds/soundsample2.mp3';
 import boomkick from './sounds/boomkick.mp3';
+import riff from './sounds/riff.mp3';
 
 import Boop from './components/boop.js';
 import Metronome from './components/metronome.js';
@@ -30,6 +31,8 @@ function App() {
         <Boop name = '1' src = {sound2}/>
         <h1></h1>
         <Boop name = '2' src = {boomkick}/>
+        <h1></h1>
+        <Boop name = '3' src = {riff}/>
 
       </div>
     </div>
