@@ -1,4 +1,4 @@
-import {Howl, Howler} from 'howler';
+import {Howl} from 'howler';
 
 const songReducer = (state = {}, action) => {
     
@@ -11,6 +11,9 @@ const songReducer = (state = {}, action) => {
             return { ...state, [action.num]: song };
         case "NOCHANGE":
             return state;
+        /*case "BLOB":
+            return { ...state, [action.num]: action.song };
+        */
         default: return state;
     }
 

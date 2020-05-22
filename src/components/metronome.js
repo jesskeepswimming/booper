@@ -3,7 +3,10 @@ import {useSelector, useDispatch} from 'react-redux';
 import {adjust, speed} from '../actions/bpm';
 import useSound from "use-sound";
 
-import Slider from "@material-ui/core/Slider";
+//import Slider from "@material-ui/core/Slider";
+import { Slider } from '@material-ui/core';
+
+
 import metro from '../sounds/metronome.mp3';
 
 const Metronome = () => {

@@ -20,7 +20,7 @@ const Boop = props => {
         change = true;
         upload = false;
     } else {
-        if (songer[num].src != sound) change = true;
+        //if (songer[num].src != sound) change = true;
     }
 
     useEffect(()=> {

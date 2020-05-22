@@ -10,6 +10,8 @@ import riff from './sounds/riff.mp3';
 // components
 import Boop from './components/Boop.js';
 import Metronome from './components/Metronome.js';
+import Record from './components/Record.js';
+
 
 function App() {
 
@@ -24,7 +26,6 @@ function App() {
       </header>
 
       <div className="boops">
-        
         <Boop name = '0' src = {sound1}/>
         <h1></h1>
         <Boop name = '1' src = {sound2}/>
@@ -32,8 +33,13 @@ function App() {
         <Boop name = '2' src = {boomkick}/>
         <h1></h1>
         <Boop name = '3' src = {riff}/>
-
+        <h1></h1>
+        <Boop name = '4' src = ""/>
       </div>
+
+      <div><Record name = '4'/></div>
+      <h1></h1>
+
     </div>
   );
 }

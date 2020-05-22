@@ -1,4 +1,4 @@
-const playReducer = (state = {"0":[false, false], "1":[false, false],"2":[false, false], "3":[false, false]}, action) => {
+const playReducer = (state = {"0":[false, false], "1":[false, false],"2":[false, false], "3":[false, false],  "4":[false, false]}, action) => {
     
     switch (action.type) {
         case 'CLICK': 
