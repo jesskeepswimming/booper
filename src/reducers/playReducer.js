@@ -10,7 +10,7 @@ const playReducer = (state = {"0":[false, false], "1":[false, false],"2":[false,
             }
 
             return { ...tempstate, [action.payload]: boo};
-        case "NOUPLOAD":
+        case "NOCLICK":
             return state;
         default: return state;
     }

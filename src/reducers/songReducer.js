@@ -11,6 +11,7 @@ const songReducer = (state = {}, action) => {
             });
             
             return { ...state, [action.num]: song };
+        
         case "NOCHANGE":
             return state;
         

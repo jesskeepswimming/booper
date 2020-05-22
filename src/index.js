@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
 import ReactDOM from 'react-dom';
 import './cssfiles/index.css';
 import App from './App';

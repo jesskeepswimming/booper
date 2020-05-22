@@ -12,18 +12,30 @@ import riff from './sounds/riff.mp3';
 import Boop from './components/Boop.js';
 import Metronome from './components/Metronome.js';
 import Record from './components/Record.js';
+import { useEffect } from 'react';
 
 
 function App() {
   const songer = useSelector(state => state.songReducer); 
-  const songs = [];
 
-  for (var i = 0; i<5; i++) {
-    songs[i] = songer[i];
-    i++;
-  }
+  const change = useSelector(state => state.changeReducer); 
+
+  // find state
+  //curr = state.value; 
+
+  useEffect( () => {
+        /*if (recorder[num][1] &&  recorder[num][0]) {
+            recording = true;
+        }*/
+        
+        return;
+    })
 
   return (
+
+
+   
+
     <div className="App">
       <header className="App-header">
         
@@ -33,6 +45,11 @@ function App() {
 
       </header>
 
+      <body>
+
+      <Record name = {change}/>
+      <p>recording on track {change}</p>
+
       <div className="boops">
         <Boop name = '0' src = {sound1}/>
         <h1></h1>
@@ -41,16 +58,18 @@ function App() {
         <Boop name = '2' src = {boomkick}/>
         <h1></h1>
         <div>
-        <Boop name = '3' src = {songs[3]}/>
-        <Record name = '3'/>
+        <Boop name = '3' src = {songer[3]}/>
         </div>
 
         <div>
-        <Boop name = '4' src = {songs[4]}/>
-        <Record name = '4'/>
+        <Boop name = '4' src = {songer[4]}/>
+
         </div>
+      
 
       </div>
+
+      </body>
 
     
     </div>

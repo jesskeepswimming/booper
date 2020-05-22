@@ -4,8 +4,11 @@ export const toggle = (num, upload) => {
             type: 'CLICK',
             payload: num
         };
-    } else return {
-        type: 'NOUPLOAD',
-        payload: num
+    } else {
+        return {
+            type:'NOCLICK',
+            payload: num
+        }
     }
+   
 };
