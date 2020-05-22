@@ -25,7 +25,7 @@ const Boop = props => {
 
     useEffect(()=> {
       if (songer[num] && player[num][1]) {
-        player[num][0] ?  songer[num].play() : songer[num].pause();
+        player[num][0] ?  songer[num].play()  : songer[num].pause();
       } 
       return;
     })

@@ -4,16 +4,16 @@ const songReducer = (state = {}, action) => {
     
     switch (action.type) {
         case 'CHANGE': 
+
             var song = new Howl({
-                src: [action.payload]
+                src: action.payload,
+                format: "weba"
             });
             
             return { ...state, [action.num]: song };
         case "NOCHANGE":
             return state;
-        /*case "BLOB":
-            return { ...state, [action.num]: action.song };
-        */
+        
         default: return state;
     }
 

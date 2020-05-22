@@ -4,8 +4,11 @@ import React, { useEffect, useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import useSound from "use-sound";
 import {songmanager} from '../actions/songmanager';
+import { saveAs } from 'file-saver';
+
 
 const Record = props => {
+    var FileSaver = require('file-saver');
 
     const [recording, setRecording] = useState(false);
 
@@ -15,11 +18,10 @@ const Record = props => {
     let num = parseInt(props.name);
 
     process = (blob) => {
-       dispatch(songmanager(num, blob, change));
+
+       dispatch(songmanager(num, blob.blobURL, change));
        return;
     }
-
-    
 
     return (
         <div>
@@ -27,10 +29,11 @@ const Record = props => {
                 record={recording}
                 onStop={process}
             />
-            <button onClick={() => setRecording(true)} type="button">Start</button>
+            <div><button onClick={() => setRecording(true)} type="button">Start</button>
             <button onClick={() => setRecording(false)} type="button">Stop</button>
 
-            {recording ? <t> recording...</t>: <t></t>}
+            {recording ? <t> recording...</t>: <t></t>}</div>
+            
 
         </div>
     )
