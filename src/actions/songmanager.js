@@ -16,15 +16,3 @@ export const songmanager = (num, song, change) => {
     
 };
 
-export const saverecord = (song) => {
-
-    console.log('saving', song.blobURL);
-    //dispatch(songmanager(change, blob.blobURL, recorder[change][1]));
-        return {
-            type: 'SAVE',
-            //num: num,
-            payload: song.blobURL
-        };
-  
-    
-};

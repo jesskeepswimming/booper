@@ -10,22 +10,17 @@ import {numchange} from '../actions/numchange';
 
 const Boop = props => {
     // props var: num, src 
-    let sound = props.src;
     let num = parseInt(props.name);
     var upload = true;
 
     const player = useSelector(state => state.playReducer); 
     const songer = useSelector(state => state.songReducer); 
-    const change = useSelector(state => state.changeReducer.curr); 
 
     const dispatch = useDispatch();  
     const recorder = useSelector(state => state.recordReducer); 
 
 
-
-    if (!songer[num]) {
-        upload = false;
-    } //else {if (songer[num].src != sound) upload = false;}
+    if (!songer[num]) upload = false;
 
     useEffect(()=> {
       if (recorder[num][1] && recorder[num][0]) {
@@ -43,8 +38,11 @@ const Boop = props => {
     return (
         <div>
             <button onClick={()=>dispatch(togglerecord(num, true))}>Record!</button>
-            <button onClick={()=>dispatch(toggle(num, upload))}>Boop!</button>
+            <button onClick={()=>dispatch(toggle(num, upload))}>{ player[num][0] ? 'toggle off' : 'toggle on'}</button>
+            <div>
+            {player[num][0]  ? <t>track on</t>: <t></t>}
             {upload ? <t></t>: <t> no sound recorded</t>}
+            </div>
         </div>
        
     )

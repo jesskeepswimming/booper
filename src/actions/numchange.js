@@ -5,15 +5,11 @@ export const numchange = (num) => {
     };
 };
 
-
 export const saverecord = (song) =>{
 
     return {
         type: 'SAVE',
         payload: song
-    };
-    
-    return;
-  
+    };  
 };
 

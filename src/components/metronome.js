@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {adjust, speed} from '../actions/bpm';
 import useSound from "use-sound";
+import {Howl} from 'howler';
 
 //import Slider from "@material-ui/core/Slider";
 import { Slider } from '@material-ui/core';
@@ -23,6 +24,15 @@ const Metronome = () => {
     setPlaybackRate(newValue/20)
     dispatch(speed(newValue/20))
   };
+
+  /*
+  var sound = new Howl({
+    src: ['../sounds/metronome.mp3']
+  });
+
+  sound.play();
+  */
+
 
   useEffect(()=> {
     met.metroOn ? play() : stop(); 

@@ -46,24 +46,17 @@ function App() {
       <body>
 
       <Record name = {change}/>
-      <p>recording on track {change}</p>
+      <p>on track {change}</p>
 
       <div className="boops">
+
         <Boop name = '0' src = {sound1}/>
         <h1></h1>
-        <Boop name = '1' src = {riff}/>
+        <Boop name = '1'/>
         <h1></h1>
-        <Boop name = '2' src = {boomkick}/>
+        <Boop name = '2'/>
         <h1></h1>
-        <div>
-        <Boop name = '3' src = {songer[3]}/>
-        </div>
-
-        <div>
-        <Boop name = '4' src = {songer[4]}/>
-
-        </div>
-      
+        <Boop name = '3'/>      
 
       </div>
 

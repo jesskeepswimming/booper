@@ -1,6 +1,5 @@
 const changeReducer = (state = {'curr': 0, 'sound': ""}, action) => {
     
-    
     switch (action.type) {
         case 'NUM': 
             console.log("NUM " +action.num);
