@@ -18,7 +18,7 @@ import { useEffect } from 'react';
 function App() {
   const songer = useSelector(state => state.songReducer); 
 
-  const change = useSelector(state => state.changeReducer); 
+  const change = useSelector(state => state.changeReducer.curr); 
 
   // find state
   //curr = state.value; 
@@ -33,8 +33,6 @@ function App() {
 
   return (
 
-
-   
 
     <div className="App">
       <header className="App-header">

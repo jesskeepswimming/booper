@@ -5,11 +5,26 @@ import {useSelector, useDispatch} from 'react-redux';
 import {songmanager} from '../actions/songmanager';
 import {togglerecord} from '../actions/togglerecord';
 
+import {saverecord} from '../actions/numchange';
+
+/*
+function Process(blob) {
+    const recorder = useSelector(state => state.recordReducer); 
+    const dispatch = useDispatch();  
+    const change = useSelector(state => state.changeReducer); 
+
+    console.log("orange " + blob.blobURL);
+    //dispatch(saverecord(blob.blobURL));
+    dispatch(saverecord(change, blob.blobURL, recorder[change][1]));
+    return;
+ };
+*/
 
 const Record = props => {
     const recorder = useSelector(state => state.recordReducer); 
     const dispatch = useDispatch();  
-    const change = useSelector(state => state.changeReducer); 
+    const change = useSelector(state => state.changeReducer.curr); 
+    const savedsong = useSelector(state => state.changeReducer.sound); 
 
     let num = parseInt(props.name);
     var recording = false;
@@ -19,10 +34,21 @@ const Record = props => {
         recording = true;
     }   
 
+    function process(blob) {
+        dispatch(saverecord(blob.blobURL));
+        return;
+    }
+
     useEffect( () => {
+
+        if (savedsong != "") {
+            dispatch(songmanager(change, savedsong, recorder[change][1]));
+            dispatch(saverecord(""));
+        }
+
         if (recorder[num][1] && recorder[num][0]) {
             //setChanger(change);
-         console.log("setting");
+         console.log("setting", change);
         } else if (recorder[num][1]) {
             //setChanger(change);
 
@@ -32,14 +58,6 @@ const Record = props => {
         return;
     })
 
-    function useProcess(blob) {
- 
-    
-        console.log("orange " + change);
-    
-        dispatch(songmanager(change, blob.blobURL, recorder[change][1]));
-        return;
-     };
     
 //            <div><button onClick={()=>dispatch(togglerecord(num, true))} type="button">Start/Stop</button>
 
@@ -47,7 +65,7 @@ const Record = props => {
         <div>
             <ReactMic
                 record={recording}
-                onStop={useProcess}
+                onStop={process}
             />
 
             {recording ? <t> recording...</t>: <t></t>}

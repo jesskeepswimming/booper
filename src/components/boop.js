@@ -12,11 +12,11 @@ const Boop = props => {
     // props var: num, src 
     let sound = props.src;
     let num = parseInt(props.name);
-    let upload = true;
+    var upload = true;
 
     const player = useSelector(state => state.playReducer); 
     const songer = useSelector(state => state.songReducer); 
-    const change = useSelector(state => state.changeReducer); 
+    const change = useSelector(state => state.changeReducer.curr); 
 
     const dispatch = useDispatch();  
     const recorder = useSelector(state => state.recordReducer); 
@@ -25,9 +25,7 @@ const Boop = props => {
 
     if (!songer[num]) {
         upload = false;
-    } else {
-        if (songer[num].src != sound) upload = false;
-    }
+    } //else {if (songer[num].src != sound) upload = false;}
 
     useEffect(()=> {
       if (recorder[num][1] && recorder[num][0]) {
@@ -37,6 +35,7 @@ const Boop = props => {
       if (songer[num] && player[num][1]) {
         player[num][0] ?  songer[num].play()  : songer[num].pause();
       } 
+
       return;
     })
 

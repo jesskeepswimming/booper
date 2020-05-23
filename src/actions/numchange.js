@@ -4,3 +4,16 @@ export const numchange = (num) => {
         num: num
     };
 };
+
+
+export const saverecord = (song) =>{
+
+    return {
+        type: 'SAVE',
+        payload: song
+    };
+    
+    return;
+  
+};
+
