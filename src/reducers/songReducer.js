@@ -6,6 +6,7 @@ const songReducer = (state = {}, action) => {
         case 'CHANGE': 
             var song = new Howl({
                 src: action.payload,
+                loop: true,
                 format: "weba"
             });   
             return { ...state, [action.num]: song };

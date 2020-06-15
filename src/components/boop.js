@@ -34,11 +34,19 @@ const Boop = props => {
       return;
     })
 
+    const handleToggle = () => {
+
+      //if (recorder[num][1]) dispatch(togglerecord(num, false));
+      
+      dispatch(toggle(num, upload));
+
+    };
+
   
     return (
         <div>
             <button onClick={()=>dispatch(togglerecord(num, true))}>Record!</button>
-            <button onClick={()=>dispatch(toggle(num, upload))}>{ player[num][0] ? 'toggle off' : 'toggle on'}</button>
+            <button onClick={handleToggle}>{ player[num][0] ? 'toggle off' : 'toggle on'}</button>
             <div>
             {player[num][0]  ? <t>track on</t>: <t></t>}
             {upload ? <t></t>: <t> no sound recorded</t>}
